@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="reset.css" type="text/css">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="./index.js" type="text/javascript"></script>
+    <script src="./functions.js" type="text/javascript"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://kit.fontawesome.com/418b370947.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class="head">
+      
+            <button id="menumechanik" class="menubuttons" onclick="btMenu()"><i class="fas fa-bars"></i> Menu </button>
+            <button id="fakturaprzycisk" class="menubuttons" onclick="btFaktura()"><i class="fas fa-receipt"></i> Faktura </button>
+            <button id="dodajrekordmechanik"  class="menubuttons" onclick="btWprowadz()"><i class="fas fa-user-plus"></i> Dodaj </button>
+            <button  class="menubuttons" onclick="btWyszukaj()"><i class="fas fa-search"></i> Szukaj </button>
+            <button id="statsbuttonmech" class="menubuttons" onclick="btStaty()"><i class="fas fa-chart-bar"></i> Statystyki </button>
+            <button id="close" class="menubuttons"><i class="fas fa-sign-out-alt"></i> Wyjscie </button>
+ 
+            <h1><i class="fas fa-wifi"></i> <i class="fas fa-signal"></i>  <i class="fas fa-battery-three-quarters"></i> 80%</h1>
+            <span id="loginmenu">Zalogowany jako: </span>
+            <span id="copyright">®Tablet maked and designed by ReVeR V-1.0 </span>
+        </div>
+            <div id="menu">
+                <button id="ubezpieczeniemech" onclick="btUbezpieczenieMech()"><i class="fas fa-database"></i> OC </button>
+                <table id="menutableinfo" class="tab"></table>
+
+                <div id="menutabletscroll">
+                <table id="menutablelastnaprawa" class="tab"></table>
+
+            </div>
+            </div>
+
+            <div id="DIVUbezpieczeniemech">
+                <table id="OCEMT" class="tab"></table>
+                <table id="OCPD" class="tab"></table>
+            </div>
+
+            <div id="faktura" style="display: none;">
+                <form class="faktura">  
+                    ID Klienta:</br></br><input id="idklienta" type="text" placeholder="Wpisz ID Klienta..." onClick="this.select();">
+                </br></br>
+                    Powód wystawienia faktury:</br></br><input id="powod" type="text" required placeholder="Podaj powód..." onClick="this.select();">
+                </br></br>
+                    Kwota: </br></br><input id="kwota" type="text"  placeholder="Wpisz kwote..." onClick="this.select();">
+                    <br><br><br><br>
+                </form>
+                <button id="wystawfakture" class ="submit" >Wystaw Fakture</button>
+
+                <form id="fakturawycena" class="faktura">
+                    <br>
+                    Ostatnia wyliczona kwota:
+                    <input id="kwotalast" type="text" onClick="this.select();">
+                <br><br><br>
+                    Kwota wyliczona dla:
+                    <input id="danelast" type="text" onClick="this.select();">
+                </form>
+            </div>
+
+            <div id="baza" style="display: none;">
+            
+                <form class="bazaform" id="arkusz1">
+                    Data Usługi: <input type="date" id="dataform" > </br></br>
+                    Dane Klienta: <input type="text" id="daneform" >  <input type="button" id="GetKlientMechanik" value="Pobierz dane klienta"></br><br>
+                    Wartość pojazdu: <input type="text" id="wartoscform" > </br>
+                    </br>Przeprowadzono Tuning:</br>
+                    <input type="checkbox" id="ct1" name="Tun" value="Hamulce">
+                    <label for="Tun"> Hamulce</label><br>
+                    <input type="checkbox" id="ct2" name="Tun" value="Skrzynia">
+                    <label for="Tun"> Skrzynia</label><br>
+                    <input type="checkbox" id="ct3" name="Tun"  value="Zawieszenie">
+                    <label for="Tun"> Zawieszenie</label><br>
+                    <input type="checkbox" id="ct4" name="Tun"  value="Pancerz">
+                    <label for="Tun"> Pancerz</label><br>
+                    <input type="checkbox" id="ct5" name="Tun"  value="Turbo">
+                    <label for="Tun"> Turbo</label><br>
+                    <input type="checkbox" id="ct6" name="Tun"  value="Silnik">
+                    <label for="Tun"> Silnik</label><br>
+                    <input type="checkbox" id="ct7" name="Tun"  value="Przyciemnianie szyb">
+                    <label for="Tun"> Przyciemnianie szyb</label><br>
+                    <input type="checkbox" id="ct8" name="Tun"  value="Kolor tablic">
+                    <label for="Tun"> Kolor tablic</label><br>
+                    <input type="checkbox" id="ct17" name="Tun"  value="Klakson">
+                    <label for="Tun"> Klakson</label><br>
+                    <input type="checkbox" id="ct9" name="Tun"  value="Wymiana felg">
+                    <label for="Tun"> Wymiana felg</label><br>
+                    <input type="checkbox" id="ct10" name="Tun"  value="Kolor felg">
+                    <label for="Tun"> Kolor felg</label><br>
+                    <input type="checkbox" id="ct11" name="Tun"  value="Dym spod opon">
+                    <label for="Tun"> Dym spod opon</label><br>
+                    <input type="checkbox" id="ct12" name="Tun"  value="Neon">
+                    <label for="Tun"> Neon</label><br>
+                    <input type="checkbox" id="ct13" name="Tun"  value="Kolor neonów">
+                    <label for="Tun"> Kolor neonów</label><br>
+                    <input type="checkbox" id="ct14" name="Tun"  value="Hydraulika">
+                    <label for="Tun"> Hydraulika</label><br>
+                    <input type="checkbox" id="ct15" name="Tun"  value="Xenon">
+                    <label for="Tun"> Xenon</label><br>
+                    <input type="checkbox" id="ct16" name="Tun"  value="Kolorowe światła">
+                    <label for="Tun"> Kolorowe światła</label><br>
+                    Wizualka: <input type="text" id="mnoznikwizualka" size="2" value="0" onClick="this.select();"></br>
+                    Lakierowanie: <input type="text" id="mnozniklakier" size="2" value="0" onClick="this.select();"></br>
+                    Extras: <input type="text" id="mnoznikextras" size="2" value="0" onClick="this.select();"></br>
+  
+
+                </form>
+
+                <form class="bazaform" id="arkusz2">
+
+                    </br>Przeprowadzono Usługę:</br>
+                    <input type="checkbox" id="cn1" name="Nap" value="Naprawa na warsztacie">
+                    <label for="Nap"> Naprawa na warsztacie</label><br>
+                    <input type="checkbox" id="cn2" name="Nap" value="Przegląd">
+                    <label for="Nap"> Przegląd</label><br>
+                    <input type="checkbox" id="cn3" name="Nap"  value="Mycie pojazdu">
+                    <label for="Nap"> Mycie pojazdu</label><br>
+                    <input type="checkbox" id="cn4" name="Nap"  value="Odholowanie">
+                    <label for="Nap"> Odholowanie</label><br>
+                    <input type="checkbox" id="cn5" name="Nap"  value="Forsowanie">
+                    <label for="Nap"> Forsowanie</label><br>
+                    <input type="checkbox" id="cn6" name="Nap"  value="Naprawa poza warsztatem">
+                    <label for="Nap"> Naprawa poza warsztatem</label><br>
+                    <input type="checkbox" id="cn7" name="Nap"  value="Zmiana koła poza warsztatem">
+                    <label for="Nap"> Zmiana koła poza warsztatem</label><br>
+                    <input type="checkbox" id="cn8" name="Nap"  value="Transport lawetą">
+                    <label for="Nap"> Transport lawetą</label><br>
+                    Dojazd: <input type="text" id="cnnaprawa" name="Nap" size="2" value="0" onClick="this.select();"> km<br>
+
+                    </br>Przeprowadzono Naprawę:</br>
+                    <input type="checkbox" id="cn9" name="Nap"  value="Układ chłodniczy">
+                    <label for="Nap"> Układ chłodniczy</label><br>
+                    <input type="checkbox" id="cn10" name="Nap"  value="Układ hamulcowy">
+                    <label for="Nap"> Układ hamulcowy</label><br>
+                    <input type="checkbox" id="cn11" name="Nap"  value="Silnik">
+                    <label for="Nap"> Silnik</label><br>
+                    <input type="checkbox" id="cn12" name="Nap"  value="Świece">
+                    <label for="Nap"> Świece</label><br>
+                    <input type="checkbox" id="cn13" name="Nap"  value="Blacharka">
+                    <label for="Nap"> Blacharka</label><br>
+                    <input type="checkbox" id="cn14" name="Nap"  value="Wymiana laminatów">
+                    <label for="Nap"> Wymiana laminatów</label><br>
+                    <input type="checkbox" id="cn15" name="Nap"  value="Wymiana szyb">
+                    <label for="Nap"> Wymiana szyb</label><br>
+                    <input type="checkbox" id="cn16" name="Nap"  value="Wymiana płynów eksploatacyjnych">
+                    <label for="Nap"> Wymiana płynów eksploatacyjnych</label><br>
+                    <input type="checkbox" id="cn17" name="Nap"  value="Przegląd techniczny">
+                    <label for="Nap"> Przegląd techniczny</label><br>
+                    <input type="checkbox" id="cn18" name="Nap"  value="Elektryka">
+                    <label for="Nap"> Elektryka</label><br>
+                    <input type="checkbox" id="cn19" name="Nap"  value="Układ kierowniczy">
+                    <label for="Nap"> Układ kierowniczy</label><br>
+                    <input type="checkbox" id="cn20" name="Nap"  value="Układ paliwowy">
+                    <label for="Nap"> Układ paliwowy</label><br>
+                    <input type="checkbox" id="cn21" name="Nap"  value="Układ jezdny">
+                    <label for="Nap"> Układ jezdny</label><br>
+                    <input type="checkbox" id="cn22" name="Nap"  value="Zawieszenie">
+                    <label for="Nap"> Zawieszenie </label><br>
+                    <input type="checkbox" id="cn23" name="Nap"  value="Diagnostyka komputerowa">
+                    <label for="Nap"> Diagnostyka komputerowa </label><br>
+
+                </br>Ubezpieczenie:</br>
+                <input type="checkbox" id="cu1" name="Tun" value="TAK">
+                <label for="Tun"> Tak </label><br>
+                <input type="checkbox" id="cu2" name="Tun" value="NIE">
+                <label for="Tun"> Nie </label><br>
+                <input type="checkbox" id="cu3" name="Tun" value="Mechanik">
+                <label for="Tun"> Mechanik </label><br></br>
+                Dane Mechanika: <input type="text" id="mechanikdane"></br></br>
+   
+                    <input type="button" class="submit" id="SubmitTune" value="Przeslij formularz">
+                </form>
+
+                <button  class="submit" id="clearform" >Wyczyść formularz</button>
+
+                <input type="text" id="rekordusuniecia" name="Tun" placeholder="Podaj ID rekordu usunięcia">
+                <button  class="submit" id="DeleteForms" >Usuń wpis</button>
+            </div>
+
+            <div id="szukanie" style="display: none;">
+
+                <input id="szukajklienta" class="szukaj" type="text" required placeholder="Wyszukaj klienta..." onClick="this.select();">
+                <button id="btszukajklienta" type="button" class="wyszukaj"> <i class="fas fa-search" id="search"></i> </button>
+
+                <input id="szukajmechanika" class="szukaj" type="text" required placeholder="Wyszukaj wpisy mechanika..." onClick="this.select();">
+                <button id="btszukajmechanika" type="button" class="wyszukaj"> <i class="fas fa-search" id="search"></i> </button>
+
+                <div id="wpiscountmech">
+                    Ilość wpisów: <span id="countmech"></span>
+                </div>
+                <div id="szukajtablescroll">
+                <table id="tabelawyszukiwanie" class="tab"> </table>
+            </div>
+
+            </div>
+
+            <div id="statystyki" style="display: none;">
+                <table id="statystyki1" class="tab"> </table>
+                <table id="statystyki2" class="tab"></table>
+                <table id="statystyki3" class="tab"></table>
+            </div>
+
+
+
+
+
+    </div>
+
+</body>
+
+<script>
+    function btMenu() {
+        var menu = document.getElementById("menu");
+        var faktura = document.getElementById("faktura");
+        var baza = document.getElementById("baza");
+        var szukanie = document.getElementById("szukanie");
+        var statystyki = document.getElementById("statystyki");
+        var ubezpieczenie = document.getElementById("DIVUbezpieczeniemech");
+
+        ubezpieczenie.style.display = "none";
+        menu.style.display = "block";
+        faktura.style.display = "none";
+        baza.style.display = "none";
+        szukanie.style.display = "none";
+        statystyki.style.display = "none";
+
+    }
+    /***************************************************************Przyciski z bazy danych***************************************************************************************/
+    function btFaktura() {
+        var menu = document.getElementById("menu");
+        var faktura = document.getElementById("faktura");
+        var baza = document.getElementById("baza");
+        var szukanie = document.getElementById("szukanie");
+        var statystyki = document.getElementById("statystyki");
+        var ubezpieczenie = document.getElementById("DIVUbezpieczeniemech");
+
+        ubezpieczenie.style.display = "none";
+        menu.style.display = "none";
+        faktura.style.display = "block";
+        baza.style.display = "none";
+        szukanie.style.display = "none";
+        statystyki.style.display = "none";
+
+    }
+
+    function btWprowadz() {
+        var menu = document.getElementById("menu");
+        var faktura = document.getElementById("faktura");
+        var baza = document.getElementById("baza");
+        var szukanie = document.getElementById("szukanie");
+        var statystyki = document.getElementById("statystyki");
+        var ubezpieczenie = document.getElementById("DIVUbezpieczeniemech");
+
+        ubezpieczenie.style.display = "none";
+        menu.style.display = "none";
+        faktura.style.display = "none";
+        baza.style.display = "block";
+        szukanie.style.display = "none";
+        statystyki.style.display = "none";
+
+        let today = new Date().toISOString().substr(0, 10);
+        document.querySelector("#dataform").value = today;    
+    }
+
+    function btWyszukaj() {
+        var menu = document.getElementById("menu");
+        var faktura = document.getElementById("faktura");
+        var baza = document.getElementById("baza");
+        var szukanie = document.getElementById("szukanie");
+        var statystyki = document.getElementById("statystyki");
+        var ubezpieczenie = document.getElementById("DIVUbezpieczeniemech");
+
+        ubezpieczenie.style.display = "none";
+        menu.style.display = "none";
+        faktura.style.display = "none";
+        baza.style.display = "none";
+        szukanie.style.display = "block";
+        statystyki.style.display = "none";
+    }
+
+    function btStaty() {
+        var menu = document.getElementById("menu");
+        var faktura = document.getElementById("faktura");
+        var baza = document.getElementById("baza");
+        var szukanie = document.getElementById("szukanie");
+        var statystyki = document.getElementById("statystyki");
+        var ubezpieczenie = document.getElementById("DIVUbezpieczeniemech");
+
+        ubezpieczenie.style.display = "none";
+        menu.style.display = "none";
+        faktura.style.display = "none";
+        baza.style.display = "none";
+        szukanie.style.display = "none";
+        statystyki.style.display = "block";
+    }
+
+    function btUbezpieczenieMech() {
+        var menu = document.getElementById("menu");
+        var faktura = document.getElementById("faktura");
+        var baza = document.getElementById("baza");
+        var szukanie = document.getElementById("szukanie");
+        var statystyki = document.getElementById("statystyki");
+        var ubezpieczenie = document.getElementById("DIVUbezpieczeniemech");
+
+        ubezpieczenie.style.display = "block";
+        menu.style.display = "none";
+        faktura.style.display = "none";
+        baza.style.display = "none";
+        szukanie.style.display = "none";
+        statystyki.style.display = "none";
+    }
+
+</script>
+
+</html>

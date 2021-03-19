@@ -1,0 +1,393 @@
+body {
+  background: none !important;
+}
+
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
+iframe{
+width: 100%;
+height: 100%;
+align-items: center;
+position: relative;
+
+}
+/*kolor RGB 255 210 0*/
+h1{
+  color: white;
+  position: relative;
+  left: 1100px;
+  bottom: 65px;
+}
+#copyright{
+  background-color: black;
+  color: white;
+  font-size: 10px;
+  position: relative;
+  margin: auto;
+  left: -250px;
+}
+
+#imglogo{
+  width: 1000px;
+  height: 600px;
+  position: relative;
+  margin: center;
+}
+
+#wpiscountmech{
+  position: relative;
+  bottom: -20px;
+  color: white;
+  background-color: black;
+  opacity: 0.9;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+}
+
+#loginmenu{
+  background-color: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  top: -83px;
+}
+
+/*********************************************   DIVy    ********************************************************************************/
+div.head{
+  height: 100px;
+}
+div.menuDiv{
+border-radius: 25px;
+height: 600px;
+position: relative; bottom: -1px;
+
+}
+
+#container {
+  background-image: url('https://i.imgur.com/gcXxlEJ.png');
+  padding: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 800px;
+  width: 1200px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+border: 2px solid aliceblue;
+border-image-source: url('https://i.imgur.com/n9Ifmmi.png');
+border-image-width: 20;
+border-image-slice: 70;
+border-image-outset: 20;
+}
+
+div.baza{
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 800px;
+  width: 1200px;
+}
+
+#menutabletscroll{
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  bottom: -50px;
+  height: 550px;
+}
+
+#szukajtablescroll{
+position: relative;
+overflow-y: scroll;
+overflow-x: hidden;
+bottom: -50px;
+height: 600px;
+}
+
+#statystyki{
+position: relative;
+overflow-y: scroll;
+overflow-x: hidden;
+height: 700px;
+}
+
+#DIVUbezpieczeniemech{
+  height: 700px;
+  width: 1000px;
+position: relative;
+left: 220px;
+overflow-y: scroll;
+overflow-x: hidden;
+}
+/************************************************************      PRZYCISKI     **************************************************************/
+
+button.menubuttons{
+width:190px;
+height:45px;
+font-size: 25px;
+color: rgb(0, 0, 0);
+position: relative;
+
+bottom: -5px;
+
+background-color: rgb(255, 210, 0);
+border: none;
+}
+
+#ubezpieczeniemech{
+background-color: rgb(0, 0, 0);
+opacity: 0.7;
+width: 150px;
+height: 75px;
+font-size: 34px;
+color: white;
+border-radius: 10px;
+position: relative;
+float: right;
+}
+
+button.submit{
+  width: 400px;
+  height: 60px;
+}
+
+#wystawfakture{
+  position: relative;
+  bottom: 100px;
+  left: 85px;
+  background-color: black;
+  color: white;
+  font-size: 36px;
+  color: white;
+  border: none;
+  opacity: 0.8;
+}
+
+button.wyszukaj{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  opacity: 0.9;
+}
+#btszukajklienta{
+position: relative;
+left: 100px;
+}
+#btszukajmechanika{
+position: relative;
+left: 100px;
+
+}
+#SubmitTune{
+  color: white;
+  background-color: rgb(0, 94, 0);
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 24px;
+  position: relative;
+  bottom: -20px;
+}
+
+#clearform{
+  position: relative;
+
+  top: -670px;
+
+  width: 590px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(190, 0, 0);
+}
+
+#DeleteForms{
+  position: relative;
+  top: -600px;
+  left: -570px;
+  width: 200px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  opacity: 0.9;
+  border-radius: 10px;
+}
+
+#GetKlientMechanik{
+  color: white;
+  background-color: rgb(0, 80, 0);
+  border-radius: 5px;
+  border-color: white;
+}
+
+#menutabletscroll{
+  position: relative;
+  bottom: -30px;
+}
+
+/*********************************************************      FORMULARZE      **********************************************/
+form.faktura{
+  position:relative;
+  font-size: 23px;
+  color: rgb(27, 27, 27);
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.8;
+  width:570px;
+  height: 445px;
+  border-radius: 15px;
+  top: -5px;
+  padding: 10px ;
+  color: white;
+  }
+  
+  form.faktura input[type="text"]{
+  width: 400px;
+  height: 40px;
+  position: relative;
+  left: 70px;
+  border-radius: 5px;
+  }
+  #fakturawycena{
+    position: relative;
+    padding: 10px;
+    color: white;
+    left: 600px;
+    height: 250px;
+    top: -530px;
+  }
+  input.szukaj{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    opacity: 0.9;
+  }
+ #szukajklienta
+ {
+  position: relative;
+  left: 155px;
+  
+ }
+ #szukajmechanika
+ {
+  position: relative;
+  left: 155px;
+
+ }
+
+ form.bazaform{
+  position:relative;
+  font-size: 13px;
+  color: rgb(27, 27, 27);
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.8;
+  color: white;
+  width:570px;
+  height: 645px;
+  border-radius: 15px;
+  top: -5px;
+  padding:10px ;
+  }
+  form.bazaform input[type="text"]{
+    position: relative;
+    text-align: center;
+    border-radius: 5px;
+    }
+  #arkusz1{
+    height: 500px;
+  }
+
+  #arkusz2{
+    position: relative;
+    left: 600px;
+    top: -525px;
+    height: 650px;
+  }
+
+
+  #rekordusuniecia{
+    position: relative;
+    top: -600px;
+    left: -590px;
+
+    width: 350px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    opacity: 0.9;
+  }
+/********************************************************************    TABELE      ********************************************************/
+#OCEMT{
+  width: 400px;
+  height: 700px;
+  position: relative;
+  top: 10px;
+}
+
+#OCPD{
+  width: 400px;
+  height: 700px;
+  position:absolute;
+  float: right;
+  right: 100px;
+  top: 10px;
+  
+}
+table.tab{
+  font-family: "Open Sans", sans-serif;
+  border-collapse: collapse;
+  color: white;
+  }
+  
+  
+  table.tab td, table.tab th{
+  border: 1px solid rgb(255, 255, 255);
+  padding: 8px;
+  background-color: black;
+  opacity: 0.85;
+  border: none;
+  }
+  
+  table.tab th{
+  text-align: center;
+  background-color: black;
+  opacity: 0.9;
+  color: white;
+  border: none; 
+  }
+  #statystyki1{
+   position: relative;
+   width: 390px;
+   height: 800px;
+  }
+#statystyki2{
+  position: absolute;
+  width: 390px;
+  height: 800px;
+  left: 400px;
+  top: 0px;
+
+}
+  
+#statystyki3{
+  position: absolute;
+  width: 400px;
+  height: 800px;
+  left: 800px;
+  top: 0px;
+
+}
